@@ -36,6 +36,6 @@ public class CommandMessage implements CommandExecutor {
         sender.sendMessage(String.valueOf(this.main.prefix) + "Vous ne pouvez pas vous parler vous même");
       } 
     } 
-    return false;
+    return true;
   }
 }

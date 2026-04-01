@@ -26,6 +26,6 @@ public class CommandBroadcast implements CommandExecutor {
       } 
       Bukkit.broadcastMessage(String.valueOf(this.main.bc) + bc.toString().replaceAll("&", "§"));
     } 
-    return false;
+    return true;
   }
 }

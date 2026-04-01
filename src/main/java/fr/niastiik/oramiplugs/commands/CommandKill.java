@@ -30,6 +30,6 @@ public class CommandKill implements CommandExecutor {
         player.sendMessage(String.valueOf(this.main.prefix) + "Vous vous êtes suicider.");
       } 
     } 
-    return false;
+    return true;
   }
 }

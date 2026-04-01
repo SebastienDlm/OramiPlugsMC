@@ -18,9 +18,10 @@ public class CommandSuicide implements CommandExecutor {
       Player player = (Player) sender;
       player.setHealth(0.0);
       player.sendMessage(String.valueOf(this.main.prefix) + "Vous vous êtes suicider.");
+      return true;
     } else {
       sender.sendMessage(String.valueOf(this.main.prefix) + "§cSeul les joueurs peuvent utiliser cette commande.");
+      return true;
     } 
-    return false;
   }
 }

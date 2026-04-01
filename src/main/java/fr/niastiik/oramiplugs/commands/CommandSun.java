@@ -21,9 +21,10 @@ public class CommandSun implements CommandExecutor{
             player.getWorld().setStorm(false);
             player.getWorld().setThundering(false);
             player.sendMessage(String.valueOf(this.main.prefix) + "Vous avez invoqué un beau soleil.");
+            return true;
         } else {
             sender.sendMessage(String.valueOf(this.main.prefix) + "§cSeul les joueurs peuvent utiliser cette commande.");
+            return true;
         } 
-        return false;
     }
 }

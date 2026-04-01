@@ -36,6 +36,6 @@ public class CommandClear implements CommandExecutor {
     } else {
       sender.sendMessage(String.valueOf(this.main.prefix) + "§cSeul les joueurs peuvent utiliser cette commande.");
     } 
-    return false;
+    return true;
   }
 }

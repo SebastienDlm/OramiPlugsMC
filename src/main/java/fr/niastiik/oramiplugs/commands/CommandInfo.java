@@ -40,7 +40,6 @@ public class CommandInfo implements CommandExecutor{
         sender.sendMessage("" + this.main.info + "");
       } 
     } 
-    return false;
+    return true;
   }
-    
 }
