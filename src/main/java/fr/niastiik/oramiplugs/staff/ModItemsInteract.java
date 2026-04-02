@@ -195,7 +195,7 @@ public class ModItemsInteract implements Listener {
         });
 
         player.sendMessage(newState
-                ? main.staff + "§7Vous devenez invisible !"
+                ? main.prefix + "§7Tu es maintenant invisible !"
                 : main.staff + "§aVous devenez visible !");
     }
 }

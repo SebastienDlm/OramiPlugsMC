@@ -10,10 +10,16 @@ public class PlayerData {
 
     private final UUID uuid;
     private boolean vanished;
+    private boolean staff;
 
     public PlayerData(UUID uuid) {
         this.uuid = uuid;
         this.vanished = false;
+        this.staff = false;
+    }
+
+    public UUID getUuid() {
+        return uuid;
     }
 
     public Player getPlayer() {
@@ -22,6 +28,10 @@ public class PlayerData {
 
     public boolean isVanished() {
         return vanished;
+    }
+
+    public boolean isStaff() {
+        return staff;
     }
 
     public void setVanished(boolean vanished) {
@@ -36,6 +46,7 @@ public class PlayerData {
 
             if (p.equals(player)) return;
 
+            // 👀 Les staff voient les vanish
             if (p.hasPermission("oramiplugs.vanish.see")) return;
 
             if (vanished) {
@@ -46,9 +57,22 @@ public class PlayerData {
         });
 
         if (vanished) {
-            player.setPlayerListName("§r");
+            player.setPlayerListName(" ");
         } else {
             player.setPlayerListName(player.getName());
         }
+
+        Main.getInstance().getPlayerDataManager().save(this);
+    }
+
+    public void setStaff(boolean staff) {
+
+        if (this.staff == staff) return;
+        this.staff = staff;
+
+        Player player = getPlayer();
+        if (player == null) return;
+
+        Main.getInstance().getPlayerDataManager().save(this);
     }
 }

@@ -93,3 +93,12 @@ commands:
   freeze:
     description: Permet de geler un joueur
     permission: oramiplugs.freeze
+  report:
+    description: Permet de signaler un joueur
+    aliases:
+    - signale
+  reportview:
+    description: Permet de signaler un joueur
+    permission: oramiplugs.reportview
+    aliases:
+    - voirsignalement

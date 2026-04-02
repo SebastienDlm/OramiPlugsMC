@@ -2,7 +2,6 @@ package fr.niastiik.oramiplugs.commands;
 
 import fr.niastiik.oramiplugs.Main;
 import fr.niastiik.oramiplugs.staff.PlayerData;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -36,6 +35,7 @@ public class CommandVanish implements CommandExecutor {
         } else {
             player.sendMessage(main.prefix + "§aTu es maintenant visible !");
         }
+
         return true;
     }
 }

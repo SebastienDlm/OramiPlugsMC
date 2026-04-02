@@ -2,42 +2,16 @@ package fr.niastiik.oramiplugs;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.niastiik.oramiplugs.commands.CommandBroadcast;
-import fr.niastiik.oramiplugs.commands.CommandClear;
-import fr.niastiik.oramiplugs.commands.CommandDay;
-import fr.niastiik.oramiplugs.commands.CommandEnderchest;
-import fr.niastiik.oramiplugs.commands.CommandFeed;
-import fr.niastiik.oramiplugs.commands.CommandFly;
-import fr.niastiik.oramiplugs.commands.CommandFreeze;
-import fr.niastiik.oramiplugs.commands.CommandGamemode;
-import fr.niastiik.oramiplugs.commands.CommandHeal;
-import fr.niastiik.oramiplugs.commands.CommandInfo;
-import fr.niastiik.oramiplugs.commands.CommandInventory;
-import fr.niastiik.oramiplugs.commands.CommandKill;
-import fr.niastiik.oramiplugs.commands.CommandMessage;
-import fr.niastiik.oramiplugs.commands.CommandNight;
-import fr.niastiik.oramiplugs.commands.CommandRain;
-import fr.niastiik.oramiplugs.commands.CommandStaff;
-import fr.niastiik.oramiplugs.commands.CommandSuicide;
-import fr.niastiik.oramiplugs.commands.CommandSun;
-import fr.niastiik.oramiplugs.commands.CommandVanish;
-import fr.niastiik.oramiplugs.events.EventFreeze;
-import fr.niastiik.oramiplugs.events.EventJoin;
-import fr.niastiik.oramiplugs.events.EventMobIgnore;
-import fr.niastiik.oramiplugs.events.EventQuit;
+import fr.niastiik.oramiplugs.commands.*;
+import fr.niastiik.oramiplugs.events.*;
 import fr.niastiik.oramiplugs.staff.ModItemsInteract;
 import fr.niastiik.oramiplugs.staff.PlayerDataManager;
 import fr.niastiik.oramiplugs.staff.PlayerManager;
@@ -46,11 +20,11 @@ import fr.niastiik.oramiplugs.staff.StaffProtection;
 public class Main extends JavaPlugin {
 
     private static Main instance;
+
     private List<UUID> modo;
     private Map<UUID, PlayerManager> players;
     private Map<UUID, Location> freezedPlayers;
-    private Map<Player, ItemStack> freeze;
-    private Set<UUID> vanishedPlayers = new HashSet<>();
+    private Map<Player, org.bukkit.inventory.ItemStack> freeze;
 
     private PlayerDataManager playerDataManager;
     private EventFreeze eventFreeze;
@@ -62,21 +36,29 @@ public class Main extends JavaPlugin {
     public String bc = "§7[§c§lOramiAnnonce§7] §e";
     public String info = "§7[§c§lOramiInformations§7] §c";
 
+    public String report = "§7[§c§lOramiReport§7] §e";
     public String staff = "§7[§c§lOramiStaff§7] §e";
     public String punition = "§7[§c§lOramiPunition§7] §c";
-    
+
     @Override
     public void onEnable() {
         instance = this;
+
+        // Init
         modo = new ArrayList<>();
         players = new HashMap<>();
         freezedPlayers = new HashMap<>();
         freeze = new HashMap<>();
 
-        playerDataManager = new PlayerDataManager();
+        saveDefaultConfig();
+
+        // Manager propre
+        playerDataManager = new PlayerDataManager(this);
         eventFreeze = new EventFreeze(this);
-        
+
         System.out.println("OramiPlugs -> Activated");
+
+        // Commands
         getCommand("broadcast").setExecutor(new CommandBroadcast(this));
         getCommand("clear").setExecutor(new CommandClear(this));
         getCommand("day").setExecutor(new CommandDay(this));
@@ -92,17 +74,20 @@ public class Main extends JavaPlugin {
         getCommand("msg").setExecutor(new CommandMessage(this));
         getCommand("night").setExecutor(new CommandNight(this));
         getCommand("rain").setExecutor(new CommandRain(this));
+        getCommand("report").setExecutor(new CommandReport(this));
         getCommand("staff").setExecutor(new CommandStaff(this));
         getCommand("suicide").setExecutor(new CommandSuicide(this));
         getCommand("sun").setExecutor(new CommandSun(this));
         getCommand("vanish").setExecutor(new CommandVanish(this));
 
-        getServer().getPluginManager().registerEvents((Listener) new EventJoin(this), (Plugin)this);
-        getServer().getPluginManager().registerEvents((Listener) new EventQuit(this), (Plugin)this);
-        getServer().getPluginManager().registerEvents((Listener) new ModItemsInteract(this), (Plugin)this);
-        getServer().getPluginManager().registerEvents(eventFreeze, (Plugin)this);
-        getServer().getPluginManager().registerEvents((Listener) new EventMobIgnore(this), (Plugin) this);
-        getServer().getPluginManager().registerEvents((Listener) new StaffProtection(this), (Plugin) this);
+        // Events
+        getServer().getPluginManager().registerEvents(new EventJoin(this), this);
+        getServer().getPluginManager().registerEvents(new EventQuit(this), this);
+        getServer().getPluginManager().registerEvents(new ModItemsInteract(this), this);
+        getServer().getPluginManager().registerEvents(eventFreeze, this);
+        getServer().getPluginManager().registerEvents(new EventMobIgnore(this), this);
+        getServer().getPluginManager().registerEvents(new StaffProtection(this), this);
+        getServer().getPluginManager().registerEvents(new EventReport(this), this);
     }
 
     @Override
@@ -115,34 +100,30 @@ public class Main extends JavaPlugin {
     }
 
     public List<UUID> getModo() {
-        return this.modo;
-    }
-  
-    public Map<UUID, PlayerManager> getPlayers() {
-        return this.players;
-    }
-  
-    public Map<UUID, Location> getFreezedPlayers() {
-        return this.freezedPlayers;
-    }
-  
-    public boolean isFreeze(Player player) {
-        return getFreezedPlayers().containsKey(player.getUniqueId());
-    }
-  
-    public Map<Player, ItemStack> getFreeze() {
-        return this.freeze;
+        return modo;
     }
 
-    public Set<UUID> getVanishedPlayers() {
-        return vanishedPlayers;
+    public Map<UUID, PlayerManager> getPlayers() {
+        return players;
+    }
+
+    public Map<UUID, Location> getFreezedPlayers() {
+        return freezedPlayers;
+    }
+
+    public boolean isFreeze(Player player) {
+        return freezedPlayers.containsKey(player.getUniqueId());
+    }
+
+    public Map<Player, org.bukkit.inventory.ItemStack> getFreeze() {
+        return freeze;
     }
 
     public PlayerDataManager getPlayerDataManager() {
         return playerDataManager;
     }
 
-    public EventFreeze getEventFreeze(){
-        return this.eventFreeze;
+    public EventFreeze getEventFreeze() {
+        return eventFreeze;
     }
 }

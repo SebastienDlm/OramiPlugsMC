@@ -36,10 +36,10 @@ public class CommandFreeze implements CommandExecutor {
 
         if (freezeManager.isFrozen(target)) {
             freezeManager.unfreezePlayer(target);
-            sender.sendMessage(this.main.staff + "Tu as freeze §c" + target.getDisplayName() + "§e.");
+            sender.sendMessage(this.main.staff + "Tu as libéré §c" + target.getDisplayName() + "§e.");
         } else {
             freezeManager.freezePlayer(target);
-            sender.sendMessage(this.main.staff + "Tu as libéré §c" + target.getDisplayName() + "§e.");
+            sender.sendMessage(this.main.staff + "Tu as freeze §c" + target.getDisplayName() + "§e.");
         }
         return true;
     }
