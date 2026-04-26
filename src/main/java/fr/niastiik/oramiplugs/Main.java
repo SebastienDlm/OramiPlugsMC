@@ -44,7 +44,6 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        // Init
         modo = new ArrayList<>();
         players = new HashMap<>();
         freezedPlayers = new HashMap<>();
@@ -52,13 +51,12 @@ public class Main extends JavaPlugin {
 
         saveDefaultConfig();
 
-        // Manager propre
         playerDataManager = new PlayerDataManager(this);
         eventFreeze = new EventFreeze(this);
 
         System.out.println("OramiPlugs -> Activated");
 
-        // Commands
+        //Commandes
         getCommand("broadcast").setExecutor(new CommandBroadcast(this));
         getCommand("clear").setExecutor(new CommandClear(this));
         getCommand("day").setExecutor(new CommandDay(this));
@@ -70,6 +68,7 @@ public class Main extends JavaPlugin {
         getCommand("heal").setExecutor(new CommandHeal(this));
         getCommand("information").setExecutor(new CommandInfo(this));
         getCommand("inventory").setExecutor(new CommandInventory(this));
+        getCommand("kick").setExecutor(new CommandKick(this));
         getCommand("kill").setExecutor(new CommandKill(this));
         getCommand("msg").setExecutor(new CommandMessage(this));
         getCommand("night").setExecutor(new CommandNight(this));
@@ -80,7 +79,7 @@ public class Main extends JavaPlugin {
         getCommand("sun").setExecutor(new CommandSun(this));
         getCommand("vanish").setExecutor(new CommandVanish(this));
 
-        // Events
+        //Events
         getServer().getPluginManager().registerEvents(new EventJoin(this), this);
         getServer().getPluginManager().registerEvents(new EventQuit(this), this);
         getServer().getPluginManager().registerEvents(new ModItemsInteract(this), this);

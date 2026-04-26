@@ -97,8 +97,6 @@ commands:
     description: Permet de signaler un joueur
     aliases:
     - signale
-  reportview:
-    description: Permet de signaler un joueur
-    permission: oramiplugs.reportview
-    aliases:
-    - voirsignalement
+  kick:
+    description: Permet d'éxpulser un joueur
+    permission: oramiplugs.kick

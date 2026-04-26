@@ -22,7 +22,7 @@ public class CommandMessage implements CommandExecutor {
     } else {
       StringBuilder m = new StringBuilder();
       for (int i = 1; i < args.length; i++)
-        m.append(String.valueOf(args[i]) + " "); 
+        m.append(String.valueOf(args[i]) + " ");
       Player pl = Bukkit.getPlayer(args[0]);
       if (sender.getName() != pl.getName()) {
         if (sender == Bukkit.getConsoleSender()) {
