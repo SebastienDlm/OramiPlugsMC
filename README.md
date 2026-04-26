@@ -2,4 +2,4 @@
 
 ...
 
-*Ce projet sert de démonstration de compétences en développement java avec library Bukkit/Spigot.*
+*Ce projet sert de démonstration de compétences en développement Java avec library Bukkit/Spigot.*
