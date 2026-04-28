@@ -1,5 +1,5 @@
 name: OramiPlugs
-version: 1.0.0
+version: 1.0.1
 main: fr.niastiik.oramiplugs.Main
 api-version: 1.21
 author: Niastiik
@@ -8,19 +8,27 @@ commands:
   heal:
     description: Permet de remplire la barre de vie
     permission: oramiplugs.heal
+    usage: "§7[§c§lOramiPlugs§7] §e/heal [Player]"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   feed:
     description: Permet de remplire la barre de nourriture
     permission: oramiplugs.feed
+    usage: "§7[§c§lOramiPlugs§7] §e/feed [Player]"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   day:
     description: Permet de mettre le jour
     permission: oramiplugs.day
     aliases:
     - jour
+    usage: "§7[§c§lOramiPlugs§7] §e/day"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   night:
     description: Permet de mettre la nuit
     permission: oramiplugs.night
     aliases:
     - nuit
+    usage: "§7[§c§lOramiPlugs§7] §e/night"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   broadcast:
     description: Permet de faire une annonce
     permission: oramiplugs.broadcast
@@ -28,75 +36,107 @@ commands:
     - bc
     - alert
     - brc
+    usage: "§7[§c§lOramiPlugs§7] §e/broadcast <Message>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   information:
     description: Permet de donner les infos d un joueur
     permission: oramiplugs.info
     aliases:
     - i
     - info
+    usage: "§7[§c§lOramiPlugs§7] §e/information <Player>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   suicide:
     description: Permet de mourrir
+    usage: "§7[§c§lOramiPlugs§7] §e/suicide"
   sun:
     description: Permet de mettre un beau soleil
     permission: oramiplugs.sun
     aliases:
     - soleil
+    usage: "§7[§c§lOramiPlugs§7] §e/sun"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   rain:
     description: Permet de mettre un belle pluie
     permission: oramiplugs.rain
     aliases:
     - pluie
+    usage: "§7[§c§lOramiPlugs§7] §e/rain"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   clear:
     description: Permet de supprimer un inventaire
     permission: oramiplugs.clear
+    usage: "§7[§c§lOramiPlugs§7] §e/clear [Player]"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   kill:
     description: Permet de tuer un utilisateur
     permission: oramiplugs.kill
+    usage: "§7[§c§lOramiPlugs§7] §e/kill <Player>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   msg:
     description: Permet de communiquer entre deux joueur sans que d'autre personne ne le vois
     aliases:
     - m
     - message
+    usage: "§7[§c§lOramiPlugs§7] §e/msg <Player> <Message>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   fly:
     description: Permet de s envoler
     permission: ormamiplugs.fly
     aliases:
     - flying
     - f
+    usage: "§7[§c§lOramiPlugs§7] §e/fly"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   inventory:
-    description: Permet de voir l inventaire
+    description: Permet de voir l inventaire d un joueur
     permission: oramiplugs.inventory
     aliases:
     - invsee
     - inventaire
     - inv
+    usage: "§7[§c§lOramiPlugs§7] §e/inventory <Player>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   enderchest:
     description: Permet de voir l enderchest d'un joueur
     permission: oramiplugs.enderchest
     aliases:
     - ec
+    usage: "§7[§c§lOramiPlugs§7] §e/enderchest [Player]"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   staff:
     description: Permet de passer en staff mod
     permission: oramiplugs.staff
     aliases:
     - mod
+    usage: "§7[§c§lOramiPlugs§7] §e/staff"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   gamemode:
     description: Permet de changer de mode
     permission: oramiplugs.gamemode
     aliases:
     - gm
+    usage: "§7[§c§lOramiPlugs§7] §e/gamemode <Mode> [Player]"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   vanish:
     description: Permet de se faire disparaitre
     permission: oramiplugs.vanish
     aliases:
     - v
+    usage: "§7[§c§lOramiPlugs§7] §e/vanish"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   freeze:
     description: Permet de geler un joueur
     permission: oramiplugs.freeze
+    usage: "§7[§c§lOramiPlugs§7] §e/freeze <Player>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   report:
     description: Permet de signaler un joueur
     aliases:
     - signale
+    usage: "§7[§c§lOramiPlugs§7] §e/report <Player>"
   kick:
     description: Permet d'éxpulser un joueur
     permission: oramiplugs.kick
+    usage: "§7[§c§lOramiPlugs§7] §e/kick <Player> <Message>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
