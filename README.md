@@ -99,7 +99,6 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
 
 ### /gamemode < survival/creative/adventure/spectator > [ Player ]:
     description: Permet de changer son mode de jeu ou celui d'un joueur
-    information: Il est actuellement impossible de changer le gamemode d'un joueur ! En cours de développement !
     permission: oramiplugs.gamemode
     aliases:
     - gm
