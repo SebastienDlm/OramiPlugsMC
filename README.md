@@ -4,11 +4,11 @@ Un projet personnel visant à créer un Plugin Minecraft pour des serveurs en 1.
 A ce jour, ce plugin possède des commandes pour des administarteurs/staff ainsi que des Events néccéssaire au bon fonctionnement des commandes.
 
 ## Commandes :
-### /heal <Player>:
-    description: Permet de remplire la barre de vie
+### /heal < Player >:
+    description: Permet de remplire sa barre de vie ou celle d'un joueur
     permission: oramiplugs.heal
-### /feed  <Player>:
-    description: Permet de remplire la barre de nourriture
+### /feed  < Player >:
+    description: Permet de remplire sa barre de nourriture ou celle d'un joueur
     permission: oramiplugs.feed
 ### /day:
     description: Permet de mettre le jour
@@ -20,93 +20,90 @@ A ce jour, ce plugin possède des commandes pour des administarteurs/staff ainsi
     permission: oramiplugs.night
     aliases:
     - nuit
-### /broadcast [Message]:
+### /broadcast [ Message ]:
     description: Permet de faire une annonce avec ou sans couleurs avec le Minecraft Color Code
     permission: oramiplugs.broadcast
     aliases:
     - bc
     - alert
     - brc
-### /information:
+### /information [ Player ]:
     description: Permet de donner les infos d'un joueur
     permission: oramiplugs.info
     aliases:
     - i
     - info
-    usage: /information [Player]
 ### /suicide:
     description: Permet de mourrir
-    usage: /suicide
 ### /sun:
     description: Permet de mettre un beau soleil
     permission: oramiplugs.sun
     aliases:
     - soleil
-    usage: /sun
 ### /rain:
     description: Permet de mettre un belle pluie
     permission: oramiplugs.rain
     aliases:
     - pluie
-    usage: /rain
-### /clear:
-    description: Permet de supprimer un inventaire
+### /clear < Player >:
+    description: Permet de supprimer son inventaire ou celui d'un joueur
     permission: oramiplugs.clear
-    usage: /clear <Player>
-### /kill:
+### /kill [ Player ]:
     description: Permet de tuer un utilisateur
     permission: oramiplugs.kill
-    usage: /kill [Player]
-### /msg:
-    description: Permet de communiquer entre deux joueur sans que d'autre personne ne le vois
+### /msg [ Player ] [ Message ]:
+    description: Permet de communiquer entre deux joueur sans que d'autre personne ne vois les message. Compatible Minecraft Color Code.
     aliases:
     - m
     - message
-    usage: /msg [Player] [Message]
 ### /fly:
     description: Permet de s'envoler si on ne vol pas et d'arreter de voler si on vol
     permission: ormamiplugs.fly
     aliases:
     - flying
     - f
-    usage: /fly
-### /inventory:
+### /inventory [ Player ]:
     description: Permet de voir l'inventaire d'un joueur
     permission: oramiplugs.inventory
     aliases:
     - invsee
     - inventaire
     - inv
-    usage: /inventory [Player]
-- /enderchest:
-    description: Permet de voir l enderchest d'un joueur
+### /enderchest < Player >:
+    description: Permet de voir son enderchest ou celui d'un joueur
     permission: oramiplugs.enderchest
     aliases:
     - ec
-- /staff:
-    description: Permet de passer en staff mod
+### /staff:
+    description: Permet de passer en mode staff
+    events: Impossibilité de cassé des blocs, de recupérer des objets au sol, de modifié son inventaire, de tuer des mobs et de se faire tuer. L'inventaire du joueur est sauvegardé jusqu'au prochain arrêt ou reload du serveur. Si le joueur se déconécte, il reste en mode staff tant que le serveur garde en mémoire l'inventaire.
+    fonctionalité: Un inventaire qui inclut ...
     permission: oramiplugs.staff
     aliases:
     - mod
-- /gamemode:
-    description: Permet de changer de mode
+### /gamemode [ survival/creative/adventure/spectator ] < Player >:
+    description: Permet de changer son mode de jeu ou celui d'un joueur
+    information: Il est actuellement impossible de changer le gamemode d'un joueur ! En cours de développement !
     permission: oramiplugs.gamemode
     aliases:
     - gm
-- /vanish:
-    description: Permet de se faire disparaitre
+### /vanish:
+    description: Permet de se cacher des autres joueurs hors staff
+    events: Impossibilité de cassé des blocs, de recupérer des objets au sol, de modifié son inventaire, de tuer des mobs et de se faire tuer. L'état est sauvegardé jusqu'au prochain arrêt ou reload du serveur.
     permission: oramiplugs.vanish
     aliases:
     - v
-- /freeze:
-    description: Permet de geler un joueur
+### /freeze [ Player ]:
+    description: Permet de geler un joueur ayant commis une infraction
     permission: oramiplugs.freeze
-- /report:
+### /report [ Player ]:
     description: Permet de signaler un joueur
+    fonctionalité: Un inventaire s'ouvre permettant de selectionné la raison du report
     aliases:
     - signale
-- /kick:
-    description: Permet d'éxpulser un joueur
+### /kick [ Player ] [ Message ]:
+    description: Permet d'éxpulser un joueur avec un message. Compatible Minecraft Color Code.
     permission: oramiplugs.kick
+
 
 *Ce projet sert de démonstration de compétences en développement Java avec library Spigot.*
