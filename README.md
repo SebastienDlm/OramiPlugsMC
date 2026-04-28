@@ -129,4 +129,4 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
 - Message de connexion
 - Message de déconnexion
 
-*Ce projet sert de démonstration de compétences en développement Java avec la librairie Spigot.*
+*Ce projet sert de démonstration de compétences en développement Java en utilisant Maven avec la librairy Spigot.*
