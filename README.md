@@ -4,64 +4,77 @@ Un projet personnel visant à créer un Plugin Minecraft pour des serveurs en 1.
 A ce jour, ce plugin possède des commandes pour des administarteurs/staff ainsi que des Events néccéssaire au bon fonctionnement des commandes.
 
 ## Commandes :
-- /heal:
+### /heal:
     description: Permet de remplire la barre de vie
     permission: oramiplugs.heal
-- /feed:
+    usage: /heal <Player>
+### /feed:
     description: Permet de remplire la barre de nourriture
     permission: oramiplugs.feed
-- /day:
+    usage: /feed <Player>
+### /day:
     description: Permet de mettre le jour
     permission: oramiplugs.day
     aliases:
     - jour
-- /night:
+    usage: /day
+### /night:
     description: Permet de mettre la nuit
     permission: oramiplugs.night
     aliases:
     - nuit
-- /broadcast:
-    description: Permet de faire une annonce
+    usage: /night
+### /broadcast:
+    description: Permet de faire une annonce avec ou sans couleurs avec le Minecraft Color Code
     permission: oramiplugs.broadcast
     aliases:
     - bc
     - alert
     - brc
-- /information:
-    description: Permet de donner les infos d un joueur
+    usage: /broadcast [Message]
+### /information:
+    description: Permet de donner les infos d'un joueur
     permission: oramiplugs.info
     aliases:
     - i
     - info
-- /suicide:
+    usage: /information [Player]
+### /suicide:
     description: Permet de mourrir
-- /sun:
+    usage: /suicide
+### /sun:
     description: Permet de mettre un beau soleil
     permission: oramiplugs.sun
     aliases:
     - soleil
-- /rain:
+    usage: /sun
+### /rain:
     description: Permet de mettre un belle pluie
     permission: oramiplugs.rain
     aliases:
     - pluie
-- /clear:
+    usage: /rain
+### /clear:
     description: Permet de supprimer un inventaire
     permission: oramiplugs.clear
-- /kill:
+    usage: /clear <Player>
+### /kill:
     description: Permet de tuer un utilisateur
     permission: oramiplugs.kill
-- /msg:
+    usage: /kill [Player]
+### /msg:
     description: Permet de communiquer entre deux joueur sans que d'autre personne ne le vois
     aliases:
     - m
     - message
-- /fly:
-    description: Permet de s envoler
+    usage: /msg [Player] [Message]
+### /fly:
+    description: Permet de s'envoler si on ne vol pas et d'arreter de voler si on vol
     permission: ormamiplugs.fly
     aliases:
     - flying
     - f
+    usage: /fly
 - /inventory:
     description: Permet de voir l inventaire
     permission: oramiplugs.inventory
