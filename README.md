@@ -4,11 +4,11 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
 À ce jour, ce plugin possède des commandes pour des administrateurs/staff ainsi que des events nécessaires au bon fonctionnement des commandes.
 
 ## Commandes :
-### /heal < Player >:
+### /heal [ Player ]:
     description: Permet de remplir sa barre de vie ou celle d'un joueur
     permission: oramiplugs.heal
 
-### /feed < Player >:
+### /feed [ Player ]:
     description: Permet de remplir sa barre de nourriture ou celle d'un joueur
     permission: oramiplugs.feed
 
@@ -24,7 +24,7 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     aliases:
     - nuit
 
-### /broadcast [ Message ]:
+### /broadcast < Message >:
     description: Permet de faire une annonce avec ou sans couleurs avec le Minecraft Color Code
     permission: oramiplugs.broadcast
     aliases:
@@ -32,7 +32,7 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     - alert
     - brc
 
-### /information [ Player ]:
+### /information < Player >:
     description: Permet de donner les infos d'un joueur
     permission: oramiplugs.info
     aliases:
@@ -54,15 +54,15 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     aliases:
     - pluie
 
-### /clear < Player >:
+### /clear [ Player ]:
     description: Permet de supprimer son inventaire ou celui d'un joueur
     permission: oramiplugs.clear
 
-### /kill [ Player ]:
+### /kill < Player >:
     description: Permet de tuer un utilisateur
     permission: oramiplugs.kill
 
-### /msg [ Player ] [ Message ]:
+### /msg < Player > < Message >:
     description: Permet de communiquer entre deux joueurs sans que d'autres personnes ne voient les messages. Compatible Minecraft Color Code.
     aliases:
     - m
@@ -75,7 +75,7 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     - flying
     - f
 
-### /inventory [ Player ]:
+### /inventory < Player >:
     description: Permet de voir l'inventaire d'un joueur
     permission: oramiplugs.inventory
     aliases:
@@ -83,7 +83,7 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     - inventaire
     - inv
 
-### /enderchest < Player >:
+### /enderchest [ Player ]:
     description: Permet de voir son enderchest ou celui d'un joueur
     permission: oramiplugs.enderchest
     aliases:
@@ -97,7 +97,7 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     aliases:
     - mod
 
-### /gamemode [ survival/creative/adventure/spectator ] < Player >:
+### /gamemode < survival/creative/adventure/spectator > [ Player ]:
     description: Permet de changer son mode de jeu ou celui d'un joueur
     information: Il est actuellement impossible de changer le gamemode d'un joueur ! En cours de développement !
     permission: oramiplugs.gamemode
@@ -111,17 +111,17 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     aliases:
     - v
 
-### /freeze [ Player ]:
+### /freeze < Player >:
     description: Permet de geler un joueur ayant commis une infraction
     permission: oramiplugs.freeze
 
-### /report [ Player ]:
+### /report < Player >:
     description: Permet de signaler un joueur
     fonctionnalité: Un inventaire s'ouvre permettant de sélectionner la raison du report
     aliases:
     - signale
 
-### /kick [ Player ] [ Message ]:
+### /kick < Player > < Message >:
     description: Permet d'expulser un joueur avec un message. Compatible Minecraft Color Code.
     permission: oramiplugs.kick
 
