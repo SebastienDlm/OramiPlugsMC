@@ -4,34 +4,29 @@ Un projet personnel visant à créer un Plugin Minecraft pour des serveurs en 1.
 A ce jour, ce plugin possède des commandes pour des administarteurs/staff ainsi que des Events néccéssaire au bon fonctionnement des commandes.
 
 ## Commandes :
-### /heal:
+### /heal <Player>:
     description: Permet de remplire la barre de vie
     permission: oramiplugs.heal
-    usage: /heal <Player>
-### /feed:
+### /feed  <Player>:
     description: Permet de remplire la barre de nourriture
     permission: oramiplugs.feed
-    usage: /feed <Player>
 ### /day:
     description: Permet de mettre le jour
     permission: oramiplugs.day
     aliases:
     - jour
-    usage: /day
 ### /night:
     description: Permet de mettre la nuit
     permission: oramiplugs.night
     aliases:
     - nuit
-    usage: /night
-### /broadcast:
+### /broadcast [Message]:
     description: Permet de faire une annonce avec ou sans couleurs avec le Minecraft Color Code
     permission: oramiplugs.broadcast
     aliases:
     - bc
     - alert
     - brc
-    usage: /broadcast [Message]
 ### /information:
     description: Permet de donner les infos d'un joueur
     permission: oramiplugs.info
@@ -75,13 +70,14 @@ A ce jour, ce plugin possède des commandes pour des administarteurs/staff ainsi
     - flying
     - f
     usage: /fly
-- /inventory:
-    description: Permet de voir l inventaire
+### /inventory:
+    description: Permet de voir l'inventaire d'un joueur
     permission: oramiplugs.inventory
     aliases:
     - invsee
     - inventaire
     - inv
+    usage: /inventory [Player]
 - /enderchest:
     description: Permet de voir l enderchest d'un joueur
     permission: oramiplugs.enderchest
