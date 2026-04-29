@@ -136,17 +136,22 @@ commands:
     - signale
     usage: "§7[§c§lOramiPlugs§7] §e/report <Player>"
   kick:
-    description: Permet d'éxpulser un joueur
+    description: Permet d'expulser un joueur
     permission: oramiplugs.kick
     usage: "§7[§c§lOramiPlugs§7] §e/kick <Player> <Message>"
     permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   god:
     description: Permet de devenir invincible ou de rendre un joueur invincible
     permission: oramiplugs.god
-    usage: "§7[§c§lOramiPlugs§7] §e/god [<]Player]"
+    usage: "§7[§c§lOramiPlugs§7] §e/god [Player]"
     permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
   randomtp:
-    description: Permet de se téléporté aleatoirement dans la map
+    description: Permet de se téléporte aleatoirement dans la map
     usage: "§7[§c§lOramiPlugs§7] §e/randomtp"
     aliases:
     - rtp
+  tp:
+    description: Permet de se teleporte a un joueur
+    permission: oramiplugs.tp
+    usage: "§7[§c§lOramiPlugs§7] §e/tp <Player>"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
