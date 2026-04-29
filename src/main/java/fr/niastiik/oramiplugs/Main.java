@@ -78,6 +78,7 @@ public class Main extends JavaPlugin {
         getCommand("staff").setExecutor(new CommandStaff(this));
         getCommand("suicide").setExecutor(new CommandSuicide(this));
         getCommand("sun").setExecutor(new CommandSun(this));
+        getCommand("tp").setExecutor(new CommandTp(this));
         getCommand("vanish").setExecutor(new CommandVanish(this));
 
         getCommand("god").setExecutor(new CommandGod(this)); //A FAIRE
