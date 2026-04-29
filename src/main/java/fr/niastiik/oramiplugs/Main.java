@@ -73,11 +73,14 @@ public class Main extends JavaPlugin {
         getCommand("msg").setExecutor(new CommandMessage(this));
         getCommand("night").setExecutor(new CommandNight(this));
         getCommand("rain").setExecutor(new CommandRain(this));
+        getCommand("randomtp").setExecutor(new CommandRandomTP(this)); //A LIMITER (TIMER)
         getCommand("report").setExecutor(new CommandReport(this));
         getCommand("staff").setExecutor(new CommandStaff(this));
         getCommand("suicide").setExecutor(new CommandSuicide(this));
         getCommand("sun").setExecutor(new CommandSun(this));
         getCommand("vanish").setExecutor(new CommandVanish(this));
+
+        getCommand("god").setExecutor(new CommandGod(this)); //A FAIRE
 
         //Events
         getServer().getPluginManager().registerEvents(new EventJoin(this), this);

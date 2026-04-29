@@ -140,3 +140,13 @@ commands:
     permission: oramiplugs.kick
     usage: "§7[§c§lOramiPlugs§7] §e/kick <Player> <Message>"
     permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
+  god:
+    description: Permet de devenir invincible ou de rendre un joueur invincible
+    permission: oramiplugs.god
+    usage: "§7[§c§lOramiPlugs§7] §e/god [<]Player]"
+    permission-message: "§7[§c§lOramiPlugs§7] §cVous n'avez pas la permission d'utiliser cette commande."
+  randomtp:
+    description: Permet de se téléporté aleatoirement dans la map
+    usage: "§7[§c§lOramiPlugs§7] §e/randomtp"
+    aliases:
+    - rtp
