@@ -124,6 +124,11 @@ Un projet personnel visant à créer un plugin Minecraft pour des serveurs en 1.
     description: Permet d'expulser un joueur avec un message. Compatible Minecraft Color Code.
     permission: oramiplugs.kick
 
+### /randomtp:
+    description: Permet de se téléporté aleatoirement dans la map.
+    aliases:
+    - rtp
+
 ## Événements :
 - Message de connexion
 - Message de déconnexion
