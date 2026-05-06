@@ -59,6 +59,7 @@ public class Main extends JavaPlugin {
         //Commandes
         getCommand("broadcast").setExecutor(new CommandBroadcast(this));
         getCommand("clear").setExecutor(new CommandClear(this));
+        getCommand("craft").setExecutor(new CommandCraft(this));
         getCommand("day").setExecutor(new CommandDay(this));
         getCommand("enderchest").setExecutor(new CommandEnderchest(this));
         getCommand("feed").setExecutor(new CommandFeed(this));
@@ -75,6 +76,7 @@ public class Main extends JavaPlugin {
         getCommand("rain").setExecutor(new CommandRain(this));
         getCommand("randomtp").setExecutor(new CommandRandomTP(this)); //A LIMITER (TIMER)
         getCommand("report").setExecutor(new CommandReport(this));
+        getCommand("spawn").setExecutor(new CommandSpawn(this));
         getCommand("staff").setExecutor(new CommandStaff(this));
         getCommand("suicide").setExecutor(new CommandSuicide(this));
         getCommand("sun").setExecutor(new CommandSun(this));
@@ -91,6 +93,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EventMobIgnore(this), this);
         getServer().getPluginManager().registerEvents(new StaffProtection(this), this);
         getServer().getPluginManager().registerEvents(new EventReport(this), this);
+
+        getServer().getPluginManager().registerEvents(new EventKillEntity(), this); //EXCLUS SURVIE
     }
 
     @Override

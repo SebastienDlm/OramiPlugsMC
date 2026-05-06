@@ -27,7 +27,7 @@ public class EventReport implements Listener {
 
         Player player = (Player) e.getWhoClicked();
         String displayName = meta.getDisplayName();
-        String targetName = e.getView().getTitle().length() > 11 ? e.getView().getTitle().substring(9) : e.getView().getTitle();
+        String targetName = e.getView().getTitle().length() > 11 ? e.getView().getTitle().substring(23) : e.getView().getTitle();
 
         switch (item.getType()) {
             case DIAMOND_SWORD:
