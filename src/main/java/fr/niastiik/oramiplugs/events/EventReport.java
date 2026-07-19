@@ -1,6 +1,5 @@
 package fr.niastiik.oramiplugs.events;
 
-import fr.niastiik.oramiplugs.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import fr.niastiik.oramiplugs.Main;
 
 public class EventReport implements Listener {
 
@@ -27,7 +28,10 @@ public class EventReport implements Listener {
 
         Player player = (Player) e.getWhoClicked();
         String displayName = meta.getDisplayName();
-        String targetName = e.getView().getTitle().length() > 11 ? e.getView().getTitle().substring(23) : e.getView().getTitle();
+        String title = e.getView().getTitle();
+        if (!title.startsWith(main.prefix) || title.length() <= main.prefix.length()) return;
+
+        String targetName = title.substring(main.prefix.length());
 
         switch (item.getType()) {
             case DIAMOND_SWORD:

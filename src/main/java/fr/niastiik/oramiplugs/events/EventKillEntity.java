@@ -1,10 +1,13 @@
 package fr.niastiik.oramiplugs.events;
 
 import java.util.Random;
+
 import org.bukkit.Material;
+import org.bukkit.entity.PigZombie;
+import org.bukkit.entity.Piglin;
+import org.bukkit.entity.Pillager;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
-import org.bukkit.entity.Pillager;
 import org.bukkit.entity.ZombieVillager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,11 +24,13 @@ public class EventKillEntity implements Listener {
 
         if (e.getEntity() instanceof Villager
                 || e.getEntity() instanceof Pillager
-                || e.getEntity() instanceof ZombieVillager) {
+                || e.getEntity() instanceof ZombieVillager
+                || e.getEntity() instanceof PigZombie
+                || e.getEntity() instanceof Piglin) {
 
             if (!(e.getEntity().getKiller() instanceof Player)) return;
 
-            if (random.nextInt(10) == 0) {
+            if (random.nextInt(200) == 0) {
                 e.getDrops().add(new ItemStack(Material.VILLAGER_SPAWN_EGG));
             }
         }

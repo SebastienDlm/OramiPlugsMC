@@ -10,8 +10,40 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.niastiik.oramiplugs.commands.*;
-import fr.niastiik.oramiplugs.events.*;
+import fr.niastiik.oramiplugs.commands.CommandBroadcast;
+import fr.niastiik.oramiplugs.commands.CommandClear;
+import fr.niastiik.oramiplugs.commands.CommandCraft;
+import fr.niastiik.oramiplugs.commands.CommandDay;
+import fr.niastiik.oramiplugs.commands.CommandEnderchest;
+import fr.niastiik.oramiplugs.commands.CommandFeed;
+import fr.niastiik.oramiplugs.commands.CommandFly;
+import fr.niastiik.oramiplugs.commands.CommandFreeze;
+import fr.niastiik.oramiplugs.commands.CommandGamemode;
+import fr.niastiik.oramiplugs.commands.CommandGod;
+import fr.niastiik.oramiplugs.commands.CommandHeal;
+import fr.niastiik.oramiplugs.commands.CommandInfo;
+import fr.niastiik.oramiplugs.commands.CommandInventory;
+import fr.niastiik.oramiplugs.commands.CommandKick;
+import fr.niastiik.oramiplugs.commands.CommandKill;
+import fr.niastiik.oramiplugs.commands.CommandMessage;
+import fr.niastiik.oramiplugs.commands.CommandNight;
+import fr.niastiik.oramiplugs.commands.CommandRain;
+import fr.niastiik.oramiplugs.commands.CommandRandomTP;
+import fr.niastiik.oramiplugs.commands.CommandRepair;
+import fr.niastiik.oramiplugs.commands.CommandReport;
+import fr.niastiik.oramiplugs.commands.CommandSpawn;
+import fr.niastiik.oramiplugs.commands.CommandStaff;
+import fr.niastiik.oramiplugs.commands.CommandSuicide;
+import fr.niastiik.oramiplugs.commands.CommandSun;
+import fr.niastiik.oramiplugs.commands.CommandTp;
+import fr.niastiik.oramiplugs.commands.CommandTrade;
+import fr.niastiik.oramiplugs.commands.CommandVanish;
+import fr.niastiik.oramiplugs.events.EventFreeze;
+import fr.niastiik.oramiplugs.events.EventJoin;
+import fr.niastiik.oramiplugs.events.EventKillEntity;
+import fr.niastiik.oramiplugs.events.EventMobIgnore;
+import fr.niastiik.oramiplugs.events.EventQuit;
+import fr.niastiik.oramiplugs.events.EventReport;
 import fr.niastiik.oramiplugs.staff.ModItemsInteract;
 import fr.niastiik.oramiplugs.staff.PlayerDataManager;
 import fr.niastiik.oramiplugs.staff.PlayerManager;
@@ -75,12 +107,14 @@ public class Main extends JavaPlugin {
         getCommand("night").setExecutor(new CommandNight(this));
         getCommand("rain").setExecutor(new CommandRain(this));
         getCommand("randomtp").setExecutor(new CommandRandomTP(this)); //A LIMITER (TIMER)
+        getCommand("repair").setExecutor(new CommandRepair(this)); //A FINIR
         getCommand("report").setExecutor(new CommandReport(this));
         getCommand("spawn").setExecutor(new CommandSpawn(this));
         getCommand("staff").setExecutor(new CommandStaff(this));
         getCommand("suicide").setExecutor(new CommandSuicide(this));
         getCommand("sun").setExecutor(new CommandSun(this));
         getCommand("tp").setExecutor(new CommandTp(this)); //A EVOLUER
+        getCommand("trade").setExecutor(new CommandTrade(this));
         getCommand("vanish").setExecutor(new CommandVanish(this));
 
         getCommand("god").setExecutor(new CommandGod(this)); //A FAIRE

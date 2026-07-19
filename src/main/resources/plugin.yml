@@ -163,3 +163,9 @@ commands:
   spawn:
     description: "Permet de se téléporter au spawn de la map"
     usage: "§7[§c§lOramiPlugs§7] §e/spawn"
+  trade:
+    description: "Permet de faire des échanges de stuff"
+    usage: "§7[§c§lOramiPlugs§7] §e/trade"
+  repair:
+    description: "Permet de réparer son stuff"
+    usage: "§7[§c§lOramiPlugs§7] §e/repair [all]"
